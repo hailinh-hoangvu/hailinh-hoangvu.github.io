@@ -3,91 +3,116 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hai Linh Portfolio</title>
+<title>Hai Linh | Marketing Portfolio</title>
 
 <style>
 
 body{
     margin:0;
-    font-family: 'Segoe UI', sans-serif;
-    background:#f5f5f5;
+    font-family:'Segoe UI', sans-serif;
+    background:#f9f9f9;
     scroll-behavior:smooth;
 }
 
-/* Layout */
-.container{
-    display:flex;
-    max-width:1100px;
-    margin:40px auto;
+/* ===== NAVBAR ===== */
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
     background:white;
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    padding:15px 0;
+    box-shadow:0 3px 10px rgba(0,0,0,0.05);
+    z-index:1000;
 }
 
-.left{
-    width:32%;
-    background:#111;
-    color:white;
-    padding:40px 30px;
+nav a{
+    text-decoration:none;
+    color:#111;
+    font-weight:600;
+    transition:0.3s;
 }
 
-.right{
-    width:68%;
-    padding:40px;
+nav a:hover{
+    color:#888;
+}
+
+/* ===== SECTIONS ===== */
+
+section{
+    padding:100px 15%;
+    min-height:100vh;
 }
 
 h1{
-    margin-top:0;
-    font-size:28px;
+    font-size:40px;
+    margin-bottom:10px;
 }
 
 h2{
-    border-bottom:2px solid #eee;
-    padding-bottom:8px;
+    font-size:28px;
     margin-bottom:20px;
 }
 
-.section{
-    margin-bottom:40px;
-}
-
-ul{
-    padding-left:20px;
+p{
     line-height:1.8;
 }
 
-/* ===== Portfolio Menu ===== */
+/* ===== HERO ===== */
 
-.portfolio-menu{
+.hero{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.hero span{
+    color:#888;
+    font-size:18px;
+}
+
+/* ===== LIST STYLE ===== */
+
+ul{
+    line-height:1.8;
+}
+
+/* ===== PRODUCTS MENU ===== */
+
+.products-menu{
     display:flex;
     gap:20px;
     margin-bottom:30px;
 }
 
-.portfolio-menu button{
+.products-menu button{
     padding:10px 18px;
     border:none;
     background:#111;
     color:white;
     cursor:pointer;
     transition:0.3s;
-    border-radius:5px;
+    border-radius:6px;
 }
 
-.portfolio-menu button:hover{
+.products-menu button:hover{
     background:#444;
 }
 
-/* ===== Gallery ===== */
+/* ===== GALLERY ===== */
 
 .gallery{
     display:none;
     grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
-    gap:15px;
+    gap:20px;
 }
 
 .gallery img{
     width:100%;
-    border-radius:8px;
+    border-radius:10px;
     cursor:pointer;
     transition:0.3s;
 }
@@ -96,12 +121,11 @@ ul{
     transform:scale(1.05);
 }
 
-/* Active gallery */
 .active{
     display:grid;
 }
 
-/* Lightbox */
+/* ===== LIGHTBOX ===== */
 
 .lightbox{
     display:none;
@@ -122,100 +146,104 @@ ul{
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div class="container">
+<!-- ===== NAVIGATION ===== -->
 
-<div class="left">
+<nav>
+    <a href="#home">Home</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- ===== HOME ===== -->
+
+<section id="home" class="hero">
     <h1>Hoang Vu Hai Linh</h1>
-    <p><strong>International Economics Student</strong></p>
+    <span>Marketing-Oriented Creative | Photography & Design</span>
 
-    <div class="section">
-        <h2>Contact</h2>
-        <p>📍 Cau Giay, Ha Noi</p>
-        <p>📧 hailinh.hnvn@gmail.com</p>
-        <p>📱 0905548161</p>
+    <p>
+        I am an International Economics student with a strong passion for marketing, 
+        media production, and creative storytelling. 
+        I specialize in photography, visual branding, and content creation.
+    </p>
+</section>
+
+<!-- ===== EDUCATION ===== -->
+
+<section id="education">
+    <h2>Education</h2>
+
+    <p><strong>Foreign Trade University</strong> (2023 - 2027)<br>
+    GPA: 3.2/4 – International Economics</p>
+
+    <p><strong>HNUE High School for Gifted Students</strong> (2020 - 2023)<br>
+    GPA: 9.5/10 – Specialized Literature Class</p>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+
+<section id="experience">
+    <h2>Experience</h2>
+
+    <ul>
+        <li>Content Creator & Designer (2021 - 2023)</li>
+        <li>Head of Media & Design – HE CSP</li>
+        <li>Head of Design – Literature in Thoughts CSP</li>
+        <li>Media & Design – MIG 2022</li>
+        <li>Literature Tutor (2023 - 2025)</li>
+    </ul>
+</section>
+
+<!-- ===== PRODUCTS (Portfolio renamed) ===== -->
+
+<section id="products">
+    <h2>Products</h2>
+
+    <div class="products-menu">
+        <button onclick="showGallery('person')">People</button>
+        <button onclick="showGallery('food')">Product</button>
+        <button onclick="showGallery('landscape')">Landscape</button>
     </div>
 
-    <div class="section">
-        <h2>Skills</h2>
-        <ul>
-            <li>Photography</li>
-            <li>Graphic Design (Canva, Lightroom)</li>
-            <li>Content Writing</li>
-        </ul>
+    <!-- People -->
+    <div id="person" class="gallery">
+        <img src="person-1.jpg" onclick="openLightbox(this.src)">
+        <img src="person-2.jpg" onclick="openLightbox(this.src)">
+        <img src="person-3.jpg" onclick="openLightbox(this.src)">
     </div>
 
-    <div class="section">
-        <h2>Language</h2>
-        <p>English – IELTS 6.0</p>
-    </div>
-</div>
-
-<div class="right">
-
-    <div class="section">
-        <h2>Education</h2>
-        <p><strong>Foreign Trade University</strong> (2023 - 2027)<br>
-        GPA: 3.2/4 – International Economics</p>
-
-        <p><strong>HNUE High School for Gifted Students</strong> (2020 - 2023)<br>
-        GPA: 9.5/10 – Specialized Literature Class</p>
+    <!-- Product -->
+    <div id="food" class="gallery">
+        <img src="food-1.jpg" onclick="openLightbox(this.src)">
+        <img src="food-2.jpg" onclick="openLightbox(this.src)">
+        <img src="food-3.jpg" onclick="openLightbox(this.src)">
     </div>
 
-    <div class="section">
-        <h2>Experience</h2>
-        <ul>
-            <li>Content Creator & Designer (2021 - 2023)</li>
-            <li>Head of Media & Design – HE CSP</li>
-            <li>Head of Design – Literature in Thoughts CSP</li>
-            <li>Media & Design – MIG 2022</li>
-            <li>Literature Tutor (2023 - 2025)</li>
-        </ul>
+    <!-- Landscape -->
+    <div id="landscape" class="gallery">
+        <img src="landscape-1.jpg" onclick="openLightbox(this.src)">
+        <img src="landscape-2.jpg" onclick="openLightbox(this.src)">
+        <img src="landscape-3.jpg" onclick="openLightbox(this.src)">
     </div>
 
-    <!-- ===== Portfolio Section ===== -->
+</section>
 
-    <div class="section">
-        <h2>Portfolio</h2>
+<!-- ===== CONTACT ===== -->
 
-        <div class="portfolio-menu">
-            <button onclick="showGallery('person')">People</button>
-            <button onclick="showGallery('food')">Product</button>
-            <button onclick="showGallery('landscape')">Landscape</button>
-        </div>
+<section id="contact">
+    <h2>Contact</h2>
+    <p>📍 Cau Giay, Ha Noi</p>
+    <p>📧 hailinh.hnvn@gmail.com</p>
+    <p>📱 0905548161</p>
+</section>
 
-        <!-- People -->
-        <div id="person" class="gallery">
-            <img src="person-1.jpg" onclick="openLightbox(this.src)">
-            <img src="person-2.jpg" onclick="openLightbox(this.src)">
-            <img src="person-3.jpg" onclick="openLightbox(this.src)">
-        </div>
+<!-- ===== LIGHTBOX ===== -->
 
-        <!-- Product -->
-        <div id="food" class="gallery">
-            <img src="food-1.jpg" onclick="openLightbox(this.src)">
-            <img src="food-2.jpg" onclick="openLightbox(this.src)">
-            <img src="food-3.jpg" onclick="openLightbox(this.src)">
-        </div>
-
-        <!-- Landscape -->
-        <div id="landscape" class="gallery">
-            <img src="landscape-1.jpg" onclick="openLightbox(this.src)">
-            <img src="landscape-2.jpg" onclick="openLightbox(this.src)">
-            <img src="landscape-3.jpg" onclick="openLightbox(this.src)">
-        </div>
-
-    </div>
-
-</div>
-
-</div>
-
-<!-- Lightbox -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <img id="lightbox-img">
 </div>
