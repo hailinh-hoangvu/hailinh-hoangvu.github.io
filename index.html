@@ -84,10 +84,14 @@ body{
     to{background-position:200% center;}
 }
 
-/* ===== NAME HOVER STAR BURST ===== */
+/* ===== NAME STAR GLOW ===== */
+
+.name:hover{
+    text-shadow:0 0 10px gold, 0 0 20px gold;
+}
 
 .name:hover::after{
-    content:"✨ ✨ ✨";
+    content:"✦ ✦ ✦";
     position:absolute;
     top:-25px;
     right:-40px;
@@ -202,6 +206,23 @@ section{
 .gallery{display:none;}
 .active{display:grid;}
 
+/* ===== PRODUCT BUTTON ===== */
+
+.product-btn{
+    padding:10px 22px;
+    border:none;
+    border-radius:30px;
+    background:gold;
+    color:black;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.product-btn:hover{
+    transform:scale(1.05);
+}
+
 /* ===== SKILLS ===== */
 
 .skill-item{
@@ -221,7 +242,13 @@ section{
     color:rgba(255,255,255,0.2);
 }
 
-.star-skill.full{color:gold;}
+.star-skill.full{
+    color:gold;
+}
+
+.star-skill.half{
+    color:rgba(255,255,255,0.2);
+}
 
 .star-skill.half::before{
     content:"★";
@@ -261,7 +288,7 @@ section{
 <h2 class="gold">Experience</h2>
 
 <div class="card">
-<h3>Head of Media & Design – HE CSP</h3>
+<h3>Head of Media & Design – History for Everyone - HE CSP</h3>
 <p>Led branding and media strategy.</p>
 <div class="exp-gallery">
 <div class="image-wrapper"><img src="experience-1.jpg"></div>
@@ -273,7 +300,7 @@ section{
 </div>
 
 <div class="card">
-<h3>Head of Event – Literature Club</h3>
+<h3>Head of Media & Design – Literature in Thoughts - LiT CSP</h3>
 <p>Directed creative visual production.</p>
 <div class="exp-gallery">
 <div class="image-wrapper"><img src="headlit-1.jpg"></div>
@@ -294,130 +321,14 @@ section{
 
 </section>
 
-<section id="products">
-<h2 class="gold">Products</h2>
-
-<div style="margin-bottom:20px;">
-<button onclick="showGallery('person')">People</button>
-<button onclick="showGallery('food')">Product</button>
-<button onclick="showGallery('landscape')">Landscape</button>
-</div>
-
-<div id="person" class="gallery">
-<div class="image-wrapper"><img src="person-1.jpg"></div>
-<div class="image-wrapper"><img src="person-2.jpg"></div>
-<div class="image-wrapper"><img src="person-3.jpg"></div>
-</div>
-
-<div id="food" class="gallery">
-<div class="image-wrapper"><img src="food-1.jpg"></div>
-<div class="image-wrapper"><img src="food-2.jpg"></div>
-<div class="image-wrapper"><img src="food-3.jpg"></div>
-</div>
-
-<div id="landscape" class="gallery">
-<div class="image-wrapper"><img src="landscape-1.jpg"></div>
-<div class="image-wrapper"><img src="landscape-2.jpg"></div>
-<div class="image-wrapper"><img src="landscape-3.jpg"></div>
-</div>
-
-</section>
-
-<section id="skills">
-<h2 class="gold">Skills</h2>
-
-<div class="card">
-<h3>Creative & Design</h3>
-
-<div class="skill-item"><span>Adobe Lightroom</span>
-<div class="star-rating">
-<span class="star-skill full">★</span>
-<span class="star-skill full">★</span>
-<span class="star-skill full">★</span>
-<span class="star-skill full">★</span>
-<span class="star-skill">★</span>
-</div></div>
-
-<div class="skill-item"><span>Canva</span>
-<div class="star-rating">
-<span class="star-skill full">★</span>
-<span class="star-skill full">★</span>
-<span class="star-skill full">★</span>
-<span class="star-skill full">★</span>
-<span class="star-skill half">★</span>
-</div></div>
-
-<div class="skill-item"><span>CapCut</span>
-<div class="star-rating">
-<span class="star-skill full">★</span>
-<span class="star-skill full">★</span>
-<span class="star-skill full">★</span>
-<span class="star-skill full">★</span>
-<span class="star-skill half">★</span>
-</div></div>
-
-</div>
-
-<div class="card">
-<h3>Data & Office Tools</h3>
-
-<div class="skill-item"><span>Microsoft Excel</span>
-<div class="star-rating">
-<span class="star-skill full">★</span>
-<span class="star-skill full">★</span>
-<span class="star-skill full">★</span>
-<span class="star-skill full">★</span>
-<span class="star-skill">★</span>
-</div></div>
-
-<div class="skill-item"><span>Microsoft Word</span>
-<div class="star-rating">
-<span class="star-skill full">★</span>
-<span class="star-skill full">★</span>
-<span class="star-skill full">★</span>
-<span class="star-skill full">★</span>
-<span class="star-skill half">★</span>
-</div></div>
-
-<div class="skill-item"><span>Microsoft PowerPoint</span>
-<div class="star-rating">
-<span class="star-skill full">★</span>
-<span class="star-skill full">★</span>
-<span class="star-skill full">★</span>
-<span class="star-skill full">★</span>
-<span class="star-skill half">★</span>
-</div></div>
-
-<div class="skill-item"><span>Microsoft Access</span>
-<div class="star-rating">
-<span class="star-skill full">★</span>
-<span class="star-skill full">★</span>
-<span class="star-skill full">★</span>
-<span class="star-skill half">★</span>
-<span class="star-skill">★</span>
-</div></div>
-
-<div class="skill-item"><span>SQL</span>
-<div class="star-rating">
-<span class="star-skill full">★</span>
-<span class="star-skill full">★</span>
-<span class="star-skill full">★</span>
-<span class="star-skill">★</span>
-<span class="star-skill">★</span>
-</div></div>
-
-</div>
-
-</section>
-
 <section id="contact">
 <h2 class="gold">Contact</h2>
+<p>📍 Cau Giay, Ha Noi</p>
 <p>📧 hailinh.hnvn@gmail.com</p>
+<p>📱 0905 548 161</p>
 </section>
 
 <script>
-
-/* random twinkle stars */
 const twinkle = document.getElementById("twinkle");
 for(let i=0;i<200;i++){
 let star=document.createElement("div");
@@ -432,7 +343,6 @@ function showGallery(id){
 document.querySelectorAll('.gallery').forEach(g=>g.classList.remove('active'));
 document.getElementById(id).classList.add('active');
 }
-
 </script>
 
 </body>
