@@ -3,105 +3,120 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hai Linh | Marketing Portfolio</title>
+<title>Hai Linh | Creative Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* ===== GLOBAL ===== */
-
 body{
     margin:0;
-    font-family: 'Poppins', sans-serif;
-    background:#0f0f0f;
+    font-family:'Poppins', sans-serif;
+    background:black;
     color:white;
+    overflow-x:hidden;
     scroll-behavior:smooth;
 }
 
-section{
-    padding:120px 12%;
+/* ===== STAR BACKGROUND ===== */
+
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:url("https://www.transparenttextures.com/patterns/stardust.png");
+    opacity:0.15;
+    z-index:-1;
 }
 
-h1,h2,h3{
-    margin:0 0 20px 0;
-}
-
-p{
-    line-height:1.8;
-    color:#ccc;
-}
-
-/* ===== NAVBAR ===== */
+/* ===== NAV ===== */
 
 nav{
     position:fixed;
-    top:0;
     width:100%;
-    background:rgba(15,15,15,0.9);
-    backdrop-filter: blur(10px);
+    top:0;
     display:flex;
     justify-content:center;
-    gap:50px;
+    gap:60px;
     padding:20px 0;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(10px);
     z-index:1000;
 }
 
 nav a{
-    text-decoration:none;
     color:white;
+    text-decoration:none;
     font-weight:500;
     transition:0.3s;
 }
 
 nav a:hover{
-    color:#999;
+    color:gold;
+}
+
+/* ===== SECTION ===== */
+
+section{
+    padding:140px 12%;
+    min-height:100vh;
 }
 
 /* ===== HERO ===== */
 
 .hero{
-    height:100vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
 }
 
 .hero h1{
-    font-size:60px;
+    font-size:70px;
     font-weight:700;
 }
 
-.hero span{
-    font-size:20px;
-    color:#888;
+.gold{
+    background:linear-gradient(45deg,#f6d365,#fda085);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 .hero p{
     max-width:600px;
     margin-top:20px;
+    color:#ccc;
+    font-size:18px;
+}
+
+/* ===== FADE IN ===== */
+
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 1s ease;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
 }
 
 /* ===== SECTION TITLE ===== */
 
 .section-title{
-    font-size:36px;
-    margin-bottom:40px;
+    font-size:40px;
+    margin-bottom:50px;
 }
-
-/* ===== CARD STYLE ===== */
 
 .card{
-    background:#1a1a1a;
+    background:rgba(255,255,255,0.05);
     padding:30px;
-    border-radius:12px;
+    border-radius:15px;
     margin-bottom:20px;
-    transition:0.3s;
+    backdrop-filter:blur(5px);
 }
 
-.card:hover{
-    transform:translateY(-5px);
-}
-
-/* ===== PRODUCTS MENU ===== */
+/* ===== PRODUCTS ===== */
 
 .products-menu{
     display:flex;
@@ -110,21 +125,19 @@ nav a:hover{
 }
 
 .products-menu button{
-    padding:12px 25px;
+    padding:12px 28px;
     border:none;
-    background:white;
+    background:gold;
     color:black;
-    cursor:pointer;
     font-weight:600;
     border-radius:30px;
+    cursor:pointer;
     transition:0.3s;
 }
 
 .products-menu button:hover{
-    background:#ccc;
+    transform:scale(1.1);
 }
-
-/* ===== GALLERY ===== */
 
 .gallery{
     display:none;
@@ -136,7 +149,7 @@ nav a:hover{
     width:100%;
     border-radius:15px;
     cursor:pointer;
-    transition:0.3s;
+    transition:0.4s;
 }
 
 .gallery img:hover{
@@ -152,11 +165,11 @@ nav a:hover{
 .lightbox{
     display:none;
     position:fixed;
-    top:0;
-    left:0;
     width:100%;
     height:100%;
     background:rgba(0,0,0,0.9);
+    top:0;
+    left:0;
     justify-content:center;
     align-items:center;
 }
@@ -172,7 +185,8 @@ nav a:hover{
 
 <body>
 
-<!-- NAVBAR -->
+<div class="stars"></div>
+
 <nav>
     <a href="#home">Home</a>
     <a href="#education">Education</a>
@@ -182,33 +196,33 @@ nav a:hover{
 </nav>
 
 <!-- HERO -->
-<section id="home" class="hero">
-    <h1>Hoang Vu Hai Linh</h1>
-    <span>Marketing Creative & Visual Storyteller</span>
+<section id="home" class="hero fade">
+    <h1><span class="gold">Hoang Vu</span> Hai Linh</h1>
+    <h2>Marketing Creative & Visual Storyteller</h2>
     <p>
-        I craft visual experiences through photography, branding and content creation.
-        Passionate about marketing strategy and creative execution.
+        I create immersive visual experiences through photography,
+        branding and strategic marketing execution.
     </p>
 </section>
 
 <!-- EDUCATION -->
-<section id="education">
-    <h2 class="section-title">Education</h2>
+<section id="education" class="fade">
+    <h2 class="section-title gold">Education</h2>
 
     <div class="card">
         <h3>Foreign Trade University</h3>
-        <p>International Economics (2023 - 2027)<br>GPA: 3.2/4</p>
+        <p>International Economics (2023 - 2027) | GPA 3.2/4</p>
     </div>
 
     <div class="card">
         <h3>HNUE High School for Gifted Students</h3>
-        <p>Specialized Literature (2020 - 2023)<br>GPA: 9.5/10</p>
+        <p>Specialized Literature (2020 - 2023) | GPA 9.5/10</p>
     </div>
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience">
-    <h2 class="section-title">Experience</h2>
+<section id="experience" class="fade">
+    <h2 class="section-title gold">Experience</h2>
 
     <div class="card">
         <p>Content Creator & Designer (2021 - 2023)</p>
@@ -220,8 +234,8 @@ nav a:hover{
 </section>
 
 <!-- PRODUCTS -->
-<section id="products">
-    <h2 class="section-title">Products</h2>
+<section id="products" class="fade">
+    <h2 class="section-title gold">Products</h2>
 
     <div class="products-menu">
         <button onclick="showGallery('person')">People</button>
@@ -249,19 +263,38 @@ nav a:hover{
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
-    <h2 class="section-title">Contact</h2>
+<section id="contact" class="fade">
+    <h2 class="section-title gold">Contact</h2>
     <p>📍 Cau Giay, Ha Noi</p>
     <p>📧 hailinh.hnvn@gmail.com</p>
     <p>📱 0905548161</p>
 </section>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <img id="lightbox-img">
 </div>
 
 <script>
+
+/* Fade in on scroll */
+const faders = document.querySelectorAll('.fade');
+const appearOptions = {
+    threshold:0.3
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer){
+    entries.forEach(entry=>{
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+    });
+}, appearOptions);
+
+faders.forEach(fader=>{
+    appearOnScroll.observe(fader);
+});
+
+/* Gallery */
 function showGallery(id){
     document.querySelectorAll('.gallery').forEach(g => g.classList.remove('active'));
     document.getElementById(id).classList.add('active');
@@ -275,6 +308,7 @@ function openLightbox(src){
 function closeLightbox(){
     document.getElementById("lightbox").style.display = "none";
 }
+
 </script>
 
 </body>
