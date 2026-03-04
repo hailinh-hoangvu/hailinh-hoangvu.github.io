@@ -14,11 +14,11 @@ body{
     font-family:'Poppins', sans-serif;
     background:black;
     color:white;
-    overflow-x:hidden;
     scroll-behavior:smooth;
+    overflow-x:hidden;
 }
 
-/* ==== STAR ANIMATION ==== */
+/* ✨ STAR SPARKLE BACKGROUND */
 
 body::before{
     content:"";
@@ -26,10 +26,11 @@ body::before{
     width:100%;
     height:100%;
     background:
-        radial-gradient(white 1px, transparent 1px);
-    background-size:50px 50px;
-    opacity:0.08;
-    animation:moveStars 60s linear infinite;
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(gold 1px, transparent 1px);
+    background-size:60px 60px, 120px 120px;
+    animation:moveStars 120s linear infinite;
+    opacity:0.1;
     z-index:-2;
 }
 
@@ -38,15 +39,10 @@ body::before{
     to{transform:translateY(-1000px);}
 }
 
-/* ==== GOLD SHIMMER ==== */
+/* GOLD SHIMMER */
 
 .gold{
-    background:linear-gradient(
-        90deg,
-        #f6d365,
-        #fda085,
-        #f6d365
-    );
+    background:linear-gradient(90deg,#f6d365,#fda085,#f6d365);
     background-size:200% auto;
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
@@ -57,17 +53,17 @@ body::before{
     to{background-position:200% center;}
 }
 
-/* ==== NAV ==== */
+/* NAV */
 
 nav{
     position:fixed;
     width:100%;
     display:flex;
     justify-content:center;
-    gap:60px;
-    padding:20px 0;
+    gap:50px;
+    padding:18px 0;
     background:rgba(0,0,0,0.6);
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(10px);
     z-index:1000;
 }
 
@@ -81,76 +77,54 @@ nav a:hover{
     color:gold;
 }
 
-/* ==== SECTION ==== */
+/* SECTION spacing giảm lại */
 
 section{
-    padding:140px 12%;
-    min-height:100vh;
+    padding:100px 12% 60px 12%;
 }
 
-/* ==== HERO ==== */
+/* HERO */
 
 .hero{
     display:flex;
     align-items:center;
     gap:50px;
+    padding-top:140px;
 }
 
 .profile-img{
-    width:230px;
-    height:280px;
+    width:220px;
+    height:270px;
     object-fit:cover;
     border-radius:50% / 40%;
     border:3px solid gold;
-    box-shadow:0 0 40px rgba(255,215,0,0.5);
+    box-shadow:0 0 30px gold;
 }
 
 .hero-text h1{
-    font-size:60px;
+    font-size:55px;
     margin:0;
 }
 
-.hero-text p{
-    margin-top:20px;
-    color:#ccc;
-    max-width:500px;
-}
-
-/* ==== FADE ==== */
-
-.fade{
-    opacity:0;
-    transform:translateY(40px);
-    transition:all 1s ease;
-}
-
-.fade.show{
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* ==== CARDS ==== */
+/* EXPERIENCE */
 
 .card{
     background:rgba(255,255,255,0.05);
-    padding:30px;
-    border-radius:20px;
+    padding:25px;
+    border-radius:18px;
     margin-bottom:30px;
-    backdrop-filter:blur(8px);
 }
-
-/* ==== EXPERIENCE GALLERY ==== */
 
 .exp-gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-    gap:20px;
-    margin-top:30px;
+    grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+    gap:18px;
+    margin-top:20px;
 }
 
 .exp-gallery img{
     width:100%;
-    border-radius:15px;
+    border-radius:12px;
     transition:0.4s;
 }
 
@@ -158,26 +132,42 @@ section{
     transform:scale(1.05);
 }
 
-/* ==== GLOW SHAPES ==== */
+/* PRODUCTS */
 
-.glow1{
-    position:fixed;
-    width:500px;
-    height:500px;
-    background:radial-gradient(circle, rgba(255,215,0,0.15), transparent 70%);
-    top:-200px;
-    right:-200px;
-    z-index:-1;
+.products-menu{
+    display:flex;
+    gap:20px;
+    margin-bottom:30px;
 }
 
-.glow2{
-    position:fixed;
-    width:400px;
-    height:400px;
-    background:radial-gradient(circle, rgba(255,140,0,0.15), transparent 70%);
-    bottom:-150px;
-    left:-150px;
-    z-index:-1;
+.products-menu button{
+    padding:10px 25px;
+    border:none;
+    background:gold;
+    color:black;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.gallery{
+    display:none;
+    grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:12px;
+    transition:0.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+.active{
+    display:grid;
 }
 
 </style>
@@ -185,84 +175,117 @@ section{
 
 <body>
 
-<div class="glow1"></div>
-<div class="glow2"></div>
-
 <nav>
-    <a href="#home">Home</a>
-    <a href="#education">Education</a>
-    <a href="#experience">Experience</a>
-    <a href="#products">Products</a>
-    <a href="#contact">Contact</a>
+<a href="#home">Home</a>
+<a href="#education">Education</a>
+<a href="#experience">Experience</a>
+<a href="#products">Products</a>
+<a href="#contact">Contact</a>
 </nav>
 
 <!-- HERO -->
-<section id="home" class="hero fade">
-    <img src="hoangvuhailinh.jpg" class="profile-img">
+<section id="home" class="hero">
+<img src="hoangvuhailinh.jpg" class="profile-img">
 
-    <div class="hero-text">
-        <h1 class="gold">HOANG VU HAI LINH</h1>
-        <h3>Marketing Creative & Visual Storyteller</h3>
-        <p>
-            International Economics student with a strong passion for marketing,
-            media production and creative storytelling. Specialized in photography,
-            branding and content creation.
-        </p>
-    </div>
+<div class="hero-text">
+<h1 class="gold">HOANG VU HAI LINH</h1>
+<h3>Marketing Creative & Visual Storyteller</h3>
+<p>International Economics student passionate about marketing, branding and visual storytelling.</p>
+</div>
 </section>
 
 <!-- EDUCATION -->
-<section id="education" class="fade">
-    <h2 class="gold">Education</h2>
-
-    <div class="card">
-        <p>Foreign Trade University (2023 - 2027)</p>
-        <p>International Economics | GPA 3.2/4</p>
-    </div>
+<section id="education">
+<h2 class="gold">Education</h2>
+<div class="card">
+<p>Foreign Trade University (2023 - 2027)</p>
+<p>International Economics | GPA 3.2/4</p>
+</div>
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience" class="fade">
-    <h2 class="gold">Experience</h2>
+<section id="experience">
+<h2 class="gold">Experience</h2>
 
-    <div class="card">
-        <h3>Head of Media & Design – HE CSP</h3>
-        <p>Led branding, visual direction and media strategy.</p>
+<div class="card">
+<h3>Head of Media & Design – History for everyone - HE CSP</h3>
+<p>Led media strategy, branding system and visual production for major club campaigns.</p>
 
-        <div class="exp-gallery">
-            <img src="experience-1.jpg">
-            <img src="experience-2.jpg">
-            <img src="experience-3.jpg">
-            <img src="experience-4.jpg">
-            <img src="experience-5.jpg">
-        </div>
-    </div>
+<div class="exp-gallery">
+<img src="experience-1.jpg">
+<img src="experience-2.jpg">
+<img src="experience-3.jpg">
+<img src="experience-4.jpg">
+<img src="experience-5.jpg">
+</div>
+</div>
+
+<div class="card">
+<h3>Head of Media & Design – Literature in Thoughts - LiT CSP</h3>
+<p>Directed visual concept and media coverage for literary events and cultural campaigns.</p>
+
+<div class="exp-gallery">
+<img src="headlit-1.jpg">
+<img src="headlit-2.jpg">
+<img src="headlit-3.jpg">
+</div>
+</div>
+
+<div class="card">
+<h3>Content Creator & Designer</h3>
+<p>Designed branding assets, posters, and managed creative content production (2021 - 2023).</p>
+</div>
+
+<div class="card">
+<h3>Literature Tutor</h3>
+<p>Taught literature and critical thinking skills for high school students (2023 - 2025).</p>
+</div>
+
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+<h2 class="gold">Products</h2>
+
+<div class="products-menu">
+<button onclick="showGallery('person')">People</button>
+<button onclick="showGallery('food')">Product</button>
+<button onclick="showGallery('landscape')">Landscape</button>
+</div>
+
+<div id="person" class="gallery">
+<img src="person-1.jpg">
+<img src="person-2.jpg">
+<img src="person-3.jpg">
+</div>
+
+<div id="food" class="gallery">
+<img src="food-1.jpg">
+<img src="food-2.jpg">
+<img src="food-3.jpg">
+</div>
+
+<div id="landscape" class="gallery">
+<img src="landscape-1.jpg">
+<img src="landscape-2.jpg">
+<img src="landscape-3.jpg">
+</div>
+
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="fade">
-    <h2 class="gold">Contact</h2>
-    <p>📍 Cau Giay, Ha Noi</p>
-    <p>📧 hailinh.hnvn@gmail.com</p>
-    <p>📱 0905548161</p>
+<section id="contact">
+<h2 class="gold">Contact</h2>
+<p>📍 Cau Giay, Ha Noi</p>
+<p>📧 hailinh.hnvn@gmail.com</p>
+<p>📱 0905548161</p>
 </section>
 
 <script>
-
-const faders = document.querySelectorAll('.fade');
-
-const appearOnScroll = new IntersectionObserver(function(entries, observer){
-    entries.forEach(entry=>{
-        if(!entry.isIntersecting) return;
-        entry.target.classList.add('show');
-        observer.unobserve(entry.target);
-    });
-},{threshold:0.3});
-
-faders.forEach(fader=>{
-    appearOnScroll.observe(fader);
-});
-
+function showGallery(id){
+document.querySelectorAll('.gallery').forEach(g=>g.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
 </script>
 
 </body>
